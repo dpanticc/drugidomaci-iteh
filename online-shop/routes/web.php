@@ -13,6 +13,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+
+
+Route::get('/vrsta', 'App\Http\Controllers\VrstaController@getAll');
+Route::get('/vrsta/{id}', 'App\Http\Controllers\VrstaController@getById');
+Route::get('/proizvod', 'App\Http\Controllers\ProizvodController@getAll');
+Route::get('/proizvod/{id}', 'App\Http\Controllers\ProizvodController@getById');
+Route::delete('proizvod/{id}', 'App\Http\Controllers\ProizvodController@delete');
+
+
+
