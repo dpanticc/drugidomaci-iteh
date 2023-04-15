@@ -14,6 +14,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
-});
+Route::get('vrsta', 'App\Http\Controllers\VrstaController@getAll');
+Route::get('proizvod', 'App\Http\Controllers\ProizvodController@getAll');
+Route::get('proizvod/{id}', 'App\Http\Controllers\ProizvodController@getById');
+Route::post('proizvod', 'App\Http\Controllers\ProizvodController@save');
+Route::delete('proizvod/{id}', 'App\Http\Controllers\ProizvodController@delete');
+
