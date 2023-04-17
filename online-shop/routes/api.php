@@ -1,5 +1,5 @@
 <?php
-
+use App\Http\Controllers\Api\AuthController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -13,10 +13,7 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "api" middleware group. Make something great!
 |
 */
+Route::post('/register', [AuthController::class, 'register']);
+Route::post('/login', [AuthController::class, 'login']);
 
-Route::get('vrsta', 'App\Http\Controllers\VrstaController@getAll');
-Route::get('proizvod', 'App\Http\Controllers\ProizvodController@getAll');
-Route::get('proizvod/{id}', 'App\Http\Controllers\ProizvodController@getById');
-Route::post('proizvod', 'App\Http\Controllers\ProizvodController@save');
-Route::delete('proizvod/{id}', 'App\Http\Controllers\ProizvodController@delete');
 

@@ -12,4 +12,8 @@ class Proizvod extends Model
     public $timestamps = false;
 
     protected $fillable = ['naziv', 'opis', 'slika', 'cena','energetski_razred','boja', 'materijal','dimenzije','vrsta_id'];
+
+    public function vrsta(){
+        return $this->belongsTo(Vrsta::class);
+    }
 }

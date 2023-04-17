@@ -8,7 +8,10 @@ use Illuminate\Database\Eloquent\Model;
 class Vrsta extends Model
 {
     use HasFactory;
-    public $timestamps = false;
 
     protected $fillable = ['naziv', 'slika'];
+
+    public function proizvods(){
+        return $this->hasMany(Proizvod::class);
+    }
 }
